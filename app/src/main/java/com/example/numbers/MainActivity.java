@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView number;
-
+    private int count;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +29,16 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int count = Integer.parseInt(number.getText().toString());
+                count = Integer.parseInt(number.getText().toString());
                 count++;
                 number.setText("" + count);
             }
         });
     }
     public void toZero(View view) {
-        number.setText("" + 0);
+//        number.setText("" + 0);
+        count = 0;
+        number.setText(String.valueOf(count));
     }
 
 
